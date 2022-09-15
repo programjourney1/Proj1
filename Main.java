@@ -62,6 +62,13 @@ public class Main {
            Poison requestPoison = mapper.readValue(ctx.body(),Poison.class);
             rr.addPoison(requestPoison.getPoisonS(),requestPoison.getPoisonD());
         });
+        ////////////////////location
+        app.get("/Pokemon/Loc/", ctx -> {
+            ctx.json(rr.getLoc());
+        });
+
+
+
        // app.get("Pokemon/Bug/Species/{Species}", ctx->
       //  {ctx.json(rr.getBug(ctx.pathParam("Species")));});
    ////////////////////////Add

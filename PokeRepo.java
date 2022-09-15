@@ -26,12 +26,11 @@ public class PokeRepo {
 
         */
         ///////
-        public List<Loc> getLoc(String Loc){
+        public List<Loc> getLoc(){
             List<Loc> allEnviro = new ArrayList<>();
             try{
                 //Statement statement =conn.createStatement();
-                PreparedStatement statement = conn.prepareStatement("Select * FROM Loc where Species = ?");
-                statement.setString(1,Loc);
+                PreparedStatement statement = conn.prepareStatement("Select * FROM Loc ");
                 ResultSet rs = statement.executeQuery();
                 while (rs.next()){
                     Loc loadingEnviro= new Loc(rs.getString("Enviroment"), rs.getString("Species"));
@@ -162,10 +161,10 @@ public class PokeRepo {
         //////////////////////////////////////Write Enviro
         public void addLoc(Loc k){
             try{
-                PreparedStatement statement = conn.prepareStatement("insert into Loc( Species, Enviroment) " +
+                PreparedStatement statement = conn.prepareStatement("insert into Locs( Species, Enviroment) " +
                         "values (?,?)");
-                statement.setString(1, k.getEnviroS());
-                statement.setString(2, k.getEnviroE());
+               // statement.setString(1, k.getEnviroS());
+                //statement.setString(2, k.getEnviroE());
                 statement.executeUpdate();
             }catch(SQLException e){
                 e.printStackTrace();
