@@ -1,4 +1,4 @@
-console.log(document);
+//console.log(document);
 let button = document.getElementById('loadButton');
 let buttonf = document.getElementById('loadButtonf');
 let buttonN = document.getElementById('loadButtonN');
@@ -33,13 +33,14 @@ addButtonP.onclick= addPoison;
 function loadSpan(response){
 //content.innerText = "Poison Pokemon"
 for(let i = 0; i < response.length; i++){
-    let paintingTitle = document.createElement("p");
-    paintingTitle.innerText = response[i].Species +" -"+ response[i].Description;
-    content.appendChild(paintingTitle);
+    let pokemon = document.createElement("p");
+    pokemon.innerText = response[i].Species +" -"+ response[i].Description;
+    content.appendChild(pokemon);
 }}
+
 function loadPoison(){
     let request = new XMLHttpRequest();
-    request.open("GET", "http://localhost:9004/Pokemon/Poison");
+    request.open("GET", "http://localhost:9004/Pokemon/Loc");
     request.send();
 
     request.onreadystatechange = load;
@@ -52,13 +53,14 @@ function loadPoison(){
         }
     }
 }
+
 //////////////////////////////
 function loadSpanF(response){
     content.innerText = "Flying Pokemon"
     for(let i = 0; i < response.length; i++){
-        let paintingTitle = document.createElement("p");
-        paintingTitle.innerText = response[i].Species +" -"+ response[i].Description;
-        content.appendChild(paintingTitle);
+        let pokemon = document.createElement("p");
+        pokemon.innerText = response[i].Species +" -"+ response[i].Description;
+        content.appendChild(pokemon);
     }}
     function loadFly(){
         let request = new XMLHttpRequest();
@@ -79,9 +81,9 @@ function loadSpanF(response){
 function loadSpanN(response){
     content.innerText = "Normal Pokemon"
     for(let i = 0; i < response.length; i++){
-        let paintingTitle = document.createElement("p");
-        paintingTitle.innerText = response[i].Species +" -"+ response[i].Description;
-        content.appendChild(paintingTitle);
+        let pokemon = document.createElement("p");
+        pokemon.innerText = response[i].Species +" -"+ response[i].Description;
+        content.appendChild(pokemon);
     }}
     function loadNorm(){
         let request = new XMLHttpRequest();
@@ -102,9 +104,9 @@ function loadSpanN(response){
     function loadSpanB(response){
         content.innerText = "Bug Pokemon"
         for(let i = 0; i < response.length; i++){
-            let paintingTitle = document.createElement("p");
-            paintingTitle.innerText = response[i].Species +" -"+ response[i].Description;
-            content.appendChild(paintingTitle);
+            let pokemon = document.createElement("p");
+            pokemon.innerText = response[i].Species +" -"+ response[i].Description;
+            content.appendChild(pokemon);
         }}
         function loadBug(){
             let request = new XMLHttpRequest();

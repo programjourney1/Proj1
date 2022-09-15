@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body Style="background-color: rgba(188, 29, 29, 0.863); text-align: center">
+
+<h1>Pokedex Homepage
+<p Style="background-color: lightblue">Welcome to the world of Pokemon. </p>
+   
+
+   <script>
+lfunction checkPassword() {
+ var password = document.getElementById("passwordB");
+ var passwordText = password.value;
+ if(passwordText === "p") {
+ return true;
+ }
+ else{return false;}
+ alert("Access denied! Incorrect password!");
+ return false;
+ }
+   </script> </h1>
+<p>
+   Password:<input id="passwordB" type="password"/>
+   <a href="proj 1 html.html" onclick="return checkPassword();">Open Pokedex</a>
+
+
+
+
+
+</body>
+</html>
