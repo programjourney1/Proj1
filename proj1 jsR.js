@@ -7,7 +7,6 @@ let content = document.getElementById('container');
 let SpeciesInputB = document.getElementById('SpeciesInputB');
 let DescriptionInputB = document.getElementById('DescriptionInputB');
 let addButtonB = document.getElementById('addButtonB');
-let playerx = "b";
 ////
 let SpeciesInputN = document.getElementById('SpeciesInputN');
 let DescriptionInputN = document.getElementById('DescriptionInputN');
@@ -29,6 +28,7 @@ addButtonB.onclick= addBug;
 addButtonN.onclick= addNormal;
 addButtonF.onclick= addFlying;
 addButtonP.onclick= addPoison;
+let playerx = "r";
 //loadButton.addEventListener("click", loadPoison);
 
 function loadSpan(response){
@@ -41,7 +41,7 @@ for(let i = 0; i < response.length; i++){
 
 function loadPoison(){
     let request = new XMLHttpRequest();
-    request.open("GET", "http://localhost:9004/Pokemon/Loc");
+    request.open("GET", "http://localhost:9004/Pokemon/Poisonr");
     request.send();
 
     request.onreadystatechange = load;
@@ -65,7 +65,7 @@ function loadSpanF(response){
     }}
     function loadFly(){
         let request = new XMLHttpRequest();
-        request.open("GET", "http://localhost:9004/Pokemon/Flying");
+        request.open("GET", "http://localhost:9004/Pokemon/Flyingr");
         request.send();
     
         request.onreadystatechange = load;
@@ -88,7 +88,7 @@ function loadSpanN(response){
     }}
     function loadNorm(){
         let request = new XMLHttpRequest();
-        request.open("GET", "http://localhost:9004/Pokemon/Normal");
+        request.open("GET", "http://localhost:9004/Pokemon/Normalr");
         request.send();
     
         request.onreadystatechange = load;
@@ -111,7 +111,7 @@ function loadSpanN(response){
         }}
         function loadBug(){
             let request = new XMLHttpRequest();
-            request.open("GET", "http://localhost:9004/Pokemon/Bug");
+            request.open("GET", "http://localhost:9004/Pokemon/Bugr");
             request.send();
         
             request.onreadystatechange = load;
@@ -144,14 +144,14 @@ function addNormal(){
     let request = new XMLHttpRequest();
     request.open("POST", "http://localhost:9004/Pokemon/Normal");
     request.setRequestHeader('Content-type','application/json; charset=UFT-8');
-    let NormalObj = {Species: SpeciesInputN.value, Description:DescriptionInputN.value, player:playerx};
+    let NormalObj = {Species: SpeciesInputN.value, Description:DescriptionInputN.value,player:playerx};
     request.send(JSON.stringify(NormalObj));
 }
 function addFlying(){
     let request = new XMLHttpRequest();
     request.open("POST", "http://localhost:9004/Pokemon/Flying");
     request.setRequestHeader('Content-type','application/json; charset=UFT-8');
-    let FlyingObj = {Species: SpeciesInputF.value, Description:DescriptionInputF.value, player:playerx};
+    let FlyingObj = {Species: SpeciesInputF.value, Description:DescriptionInputF.value,player:playerx};
     request.send(JSON.stringify(FlyingObj));
 }
 
@@ -159,7 +159,7 @@ function addPoison(){
     let request = new XMLHttpRequest();
     request.open("POST", "http://localhost:9004/Pokemon/Poison");
     request.setRequestHeader('Content-type','application/json; charset=UFT-8');
-    let PoisonObj = {Species: SpeciesInputP.value, Description:DescriptionInputP.value, player:playerx};
+    let PoisonObj = {Species: SpeciesInputP.value, Description:DescriptionInputP.value,player:playerx};
     request.send(JSON.stringify(PoisonObj));
 }
 ////////////

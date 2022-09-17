@@ -4,10 +4,7 @@ import Service.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.javalin.Javalin;
 import io.javalin.core.JavalinConfig;
-import org.example.Bug;
-import org.example.Flying;
-import org.example.Normal;
-import org.example.Poison;
+import org.example.*;
 
 import java.sql.SQLException;
 import java.util.*;
@@ -41,33 +38,62 @@ public class Main {
         app.get("/Pokemon/Bug/", ctx -> {
             ctx.json(rr.getBug());
         });
+
+        app.get("/Pokemon/Poisonr/", ctx -> {
+            ctx.json(rr.getPoisonr());
+        });
+        app.get("/Pokemon/Flyingr/", ctx -> {
+            ctx.json(rr.getFlyr());
+        });
+        app.get("/Pokemon/Normalr/", ctx -> {
+            ctx.json(rr.getNormr());
+        });
+        app.get("/Pokemon/Bugr/", ctx -> {
+            ctx.json(rr.getBugr());
+        });
         //////////////////////////addctx
        app.post("/Pokemon/Bug", ctx -> {
             ObjectMapper mapper = new ObjectMapper();
             Bug requestBug = mapper.readValue(ctx.body(),Bug.class);
-            rr.addBug(requestBug.getBugS(),requestBug.getBugD());
+            rr.addBug(requestBug.getBugS(),requestBug.getBugD(),requestBug.getplayerb());
         });
         app.post("/Pokemon/Normal", ctx -> {
             ObjectMapper mapper1 = new ObjectMapper();
             Normal requestBug = mapper1.readValue(ctx.body(),Normal.class);
-            rr.addNormal(requestBug.getNormalS(),requestBug.getNormalD());
+            rr.addNormal(requestBug.getNormalS(),requestBug.getNormalD(),requestBug.getplayern());
         });
         app.post("/Pokemon/Flying", ctx -> {
             ObjectMapper mapper = new ObjectMapper();
             Flying requestBug = mapper.readValue(ctx.body(),Flying.class);
-            rr.addFlying(requestBug.getFlyingS(),requestBug.getFlyingD());
+            rr.addFlying(requestBug.getFlyingS(),requestBug.getFlyingD(),requestBug.getplayerf());
         });
         app.post("/Pokemon/Poison", ctx -> {
             ObjectMapper mapper = new ObjectMapper();
            Poison requestPoison = mapper.readValue(ctx.body(),Poison.class);
-            rr.addPoison(requestPoison.getPoisonS(),requestPoison.getPoisonD());
+            rr.addPoison(requestPoison.getPoisonS(),requestPoison.getPoisonD(),requestPoison.getplayerp());
         });
         ////////////////////location
-        app.get("/Pokemon/Loc/", ctx -> {
+    /*    app.get("/Pokemon/Loc/", ctx -> {
             ctx.json(rr.getLoc());
         });
+        app.post("/Pokemon/Loc", ctx -> {
+            ObjectMapper mapper1 = new ObjectMapper();
+           Loc requestBug = mapper1.readValue(ctx.body(), Loc.class);
+            rr.addLoc(requestBug.getLocS(),requestBug.getLocD());
+        }); */
+/////////////////////////////
+        app.get("/Pokemon/Locz/", ctx -> {
+            ctx.json(rr.getLocz());
+        });
+        app.post("/Pokemon/Locz", ctx -> {
+            ObjectMapper mapper1 = new ObjectMapper();
+            Loc requestBug = mapper1.readValue(ctx.body(), Loc.class);
+            rr.addLocz(requestBug.getLocS(),requestBug.getLocD(), requestBug.getId());
+        });
 
-
+        app.get("/Pokemon/Locza/", ctx -> {
+            ctx.json(rr.getLocza());
+        });
 
        // app.get("Pokemon/Bug/Species/{Species}", ctx->
       //  {ctx.json(rr.getBug(ctx.pathParam("Species")));});

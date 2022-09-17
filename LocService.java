@@ -16,15 +16,15 @@ public class LocService {
     //public LocService(PokeRepo rr){
     //    this.rr=rr;
    // }
-    public List<Loc> getLoc(String E){
-        return rr.getLoc(E);
+  //  public List<Loc> getLoc(String E){
+   //     return rr.getLoc();
 
-    }
-    public void addLoc(String Species, String Loc){
+  //  }
+  //  public void addLoc(String Species, String Loc){
 
 
-        Loc newEnviro = new Loc(Species, Loc);
-        rr.addLoc(newEnviro);}
+   //     Loc newEnviro = new Loc(Species, Loc);
+    //    rr.addLoc(newEnviro);}
 
 
   //  public String getAll() {

@@ -3,11 +3,13 @@ package org.example;
 public class Poison {
     public String Species;
     public String Description;
+    public String player;
     public Poison(){}
 
-    public Poison(String Species, String Description) {
+    public Poison(String Species, String Description, String player) {
         this.Species = Species;
         this.Description = Description;
+        this.player = player;
     }
     /////////////
     @Override
@@ -25,6 +27,10 @@ public class Poison {
     public String getPoisonD() {
 
         return Description;
+    }
+    public String getplayerp() {
+
+        return player;
     }
 
 }

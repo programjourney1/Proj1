@@ -3,11 +3,13 @@ package org.example;
 public class Bug {
     public String Species;
     public String Description;
+    public String player;
 public Bug(){}
 
-    public Bug(String Species, String Description) {
+    public Bug(String Species, String Description,String player) {
         this.Species = Species;
         this.Description = Description;
+        this.player = player;
     }
     /////////////
     @Override
@@ -22,5 +24,9 @@ public Bug(){}
     public String getBugD() {
 
         return Description;
+    }
+    public String getplayerb() {
+
+        return player;
     }
 }

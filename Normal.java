@@ -3,11 +3,15 @@ package org.example;
 public class Normal {
     public String Species;
     public String Description;
+    public String player;
+
+
     public Normal(){}
 
-    public Normal(String Species, String Description) {
+    public Normal(String Species, String Description,String player) {
         this.Species = Species;
         this.Description = Description;
+        this.player = player;
     }
     /////////////
     @Override
@@ -23,5 +27,9 @@ public class Normal {
     public String getNormalD() {
 
         return Description;
+    }
+    public String getplayern() {
+
+        return player;
     }
 }

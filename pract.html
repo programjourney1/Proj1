@@ -5,25 +5,42 @@
  <style>
  body {
    background-color:  rgba(188, 29, 29, 0.863); text-align: center;
- padding: 30px;
+ padding: 1px;
  }
  </style>
  <script>
  function checkPassword() {
  var password = document.getElementById("passwordBox");
  var passwordText = password.value;
- if(passwordText === "p") {
+ if(passwordText === "Charmander") {
  return true;
  }
- alert("Access denied! Incorrect password!");
+ 
+ alert("Access denied! Incorrect password! Team Rocket Detected");
  return false;
  }
+ function checkPasswordR() {
+ var password = document.getElementById("passwordBoxR");
+ var passwordText = password.value;
+ if(passwordText === "Squirtle") {
+ return true;
+ }
+ alert("Access denied! Incorrect password! Team Rocket Detected");
+ return false;
+ }
+ //////////////////
  </script>
 </head>
 <body>
- <p style="font-size: 30pt;">Welcome to the world of Pokemon. </p>
+ <p style="font-size: 30pt; ;">       Welcome to the world of Pokemon.  <img src="oak1.png"> </p>
  <p>Please enter the password to access Pokedex</p>
- <p>Password:<input id="passwordBox" type="password"/>
- <a href="proj 1 html.html" onclick="return checkPassword();">Open Pokedex</a>
+ <p>Password:<input id="passwordBox" type="password" style="background-color: red;"/>
+ <a href="proj 1 htmlR.html" onclick="return checkPassword();">(Red Version) |  Open Pokedex </a>
+ <a href="proj1LocR.html" onclick="return checkPassword();">| Open Pokemon Locator</a>
+ 
+ <p>Password:<input id="passwordBoxR" type="password" style="background-color: blue;" />
+    <a href="proj 1 html.html" onclick="return checkPasswordR();">(Blue Version) | Open Pokedex</a>
+    <a href="proj1Loc.html" onclick="return checkPasswordR();">| Open Pokemon Locator</a>
 </body>
+<footer><img src="pdex.png"></footer>
 </html>
